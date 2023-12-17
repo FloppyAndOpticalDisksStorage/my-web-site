@@ -18,7 +18,6 @@ function keyGenerator() {
     $key = $firstBox . "-" . $secondBox . "-" . $thirdBox . "-" . $fourthBox . "-" . $fifthBox;
     return $key;
 }
-// Change the email address and key in this line:
 $to = $_GET("email");
 $key = keyGenerator();
 ;
@@ -36,3 +35,21 @@ if (mail($to, $subject, $body)) {
     echo 'Unable to send email. Please check your email address and key.';
 }
 ?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Key Giver
+        </title>
+    </head>
+    <body>
+        <form method="post">
+            <p>
+                Email: <input type="email" name="email">
+            </p>
+            <p>
+                <input type="submit" value="Send key">
+            </p>
+        </form>
+    </body>
+</html>
